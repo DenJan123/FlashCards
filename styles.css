@@ -1,0 +1,23 @@
+h1 {
+    border-width: 2px;
+    border-style: solid;
+    border-color: gray;
+}
+
+span {
+    border-bottom: 5px solid green;
+    border-left: 2px solid brown;
+}
+
+.Norway {
+    border: 2px solid blue;
+}
+
+.container {
+    display: flex;
+}
+p{
+    margin: 5px;
+    background-color: aliceblue;
+    font-family: 'Roboto', sans-serif;
+}
