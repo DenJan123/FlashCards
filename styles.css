@@ -1,23 +1,119 @@
+body {
+    background-image: url("/world.png");
+    background-size: 90vmax 70vmax;
+    background-repeat: no-repeat;
+    /*background-position: center;*/
+}
+
 h1 {
-    border-width: 2px;
-    border-style: solid;
-    border-color: gray;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
-span {
-    border-bottom: 5px solid green;
-    border-left: 2px solid brown;
+p {
+    position: relative;
+    top: 20%;
+    color: #FF0085;
+    font-family: 'Roboto', sans-serif;
+
 }
 
-.Norway {
-    border: 2px solid blue;
+
+
+/*animation*/
+@keyframes change-font-size {
+    0% {
+        height: 10px;
+    }
+    50% {
+        height: 50px;
+    }
+    100% {
+        height: 10px;
+    }
+}
+
+@keyframes color-change {
+    0% {
+        color: teal;
+    }
+    100% {
+        color: blue;
+    }
+    /*0% {*/
+    /*    color: red;*/
+    /*}*/
+}
+
+h1 {
+    animation: color-change 15s infinite;
 }
 
 .container {
     display: flex;
+    flex-flow: row wrap;
+    height: 350px;
+    width: 350px;
+
+    align-items: stretch;
+    justify-content: space-around;
+    align-content: space-around;
+
+    /*Position in the center of the screen*/
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
 }
-p{
-    margin: 5px;
-    background-color: aliceblue;
+
+
+.card {
+    border-radius: 20%;
+    border: 1px solid grey;
+    height: 100px;
+    width: 100px;
     font-family: 'Roboto', sans-serif;
+    text-align: center;
+    transition: all 1s .1s linear;
+    transform-style: preserve-3d;
+    /*opacity: .9;*/
+
+}
+
+.front,
+.back {
+    border-radius: 20%;
+    border: 1px solid grey;
+    height: 100px;
+    width: 100px;
+
+    position: absolute;
+    background-color: green;
+    transition: all 1s .1s linear;
+
+
+}
+
+.front {
+    background: linear-gradient(#D9FF15, #FFB200);
+    z-index: 2;
+    backface-visibility: hidden;
+    /*opacity: .9;*/
+}
+
+.back {
+    background: linear-gradient(#08EAEAFF, #2AF590FF);
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.card:hover {
+    /*z-index: -1;*/
+    transform: rotateY(180deg);
+    /*opacity: 1;*/
+}
+
+.container{
+    perspective: 850px;
 }
